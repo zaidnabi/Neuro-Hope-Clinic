@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Muhammad Tariq | Neuro Hope Clinic</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7', // Primary soft blue
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            light: '#dcfce7',
+                            DEFAULT: '#22c55e', // Soft green for WhatsApp
+                            dark: '#16a34a'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased overflow-x-hidden selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+<div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <div class="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 border border-brand-100/80 bg-brand-50/30 p-0.5 shadow-sm transition-all duration-300 group-hover:border-brand-300 group-hover:shadow-brand-100/50">
+        <img src="public/logo.jpeg" alt="Neuro Hope Clinic" class="w-full h-full object-cover object-center rounded-[10px]">
+    </div>
+    <div>
+        <span class="font-bold text-xl text-gray-900 block leading-tight group-hover:text-brand-700 transition-colors">Neuro Hope</span>
+        <span class="font-bold text-xm text-brand-600 font-medium tracking-wider uppercase">Clinic</span>
+    </div>
+</div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Services</a>
+                    <a href="#about" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">About</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Testimonials</a>
+                    <a href="#location" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Location</a>
+                    <!-- <a href="https://wa.me/923480603093?text=Hello%20Doctor,%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer" class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-brand-200 hover:shadow-brand-300 hover:-translate-y-0.5">
+                        Book Appointment
+                    </a> -->
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-600 focus:outline-none p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 absolute w-full shadow-soft">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#services" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 mobile-link">Services</a>
+                <a href="#about" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 mobile-link">About</a>
+                <a href="#testimonials" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 mobile-link">Testimonials</a>
+                <a href="#location" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 mobile-link">Location</a>
+                <a href="https://wa.me/923480603093?text=Hello%20Doctor,%20I%20want%20to%20book%20an%20appointment" target="_blank" class="mt-4 block text-center bg-brand-600 text-white px-5 py-3 rounded-xl font-medium shadow-md">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
+        <!-- Abstract Background Elements -->
+        <div class="absolute top-0 right-0 -z-10 translate-x-1/3 -translate-y-1/4">
+            <div class="w-96 h-96 bg-brand-100/50 rounded-full blur-3xl"></div>
+        </div>
+        <div class="absolute bottom-0 left-0 -z-10 -translate-x-1/3 translate-y-1/3">
+            <div class="w-96 h-96 bg-accent-light/50 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+    <div class="lg:col-span-6 text-center lg:text-left mb-16 lg:mb-0" id="hero-content">
+        <!-- Top Badge -->
+        <div class="inline-block px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 font-medium text-sm mb-6 hero-element">
+            • SITARA-E-IMTIAZ (MILITARY) AWARDEE
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight leading-tight mb-6 hero-element">
+            Pakistan's Trusted <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">Neuro-Physician</span> & Medical Expert
+        </h1>
+
+        <!-- Subtitle / Bio Text -->
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 hero-element leading-relaxed">
+            Professor Brigadier (R) Muhammad Tariq brings decades of military-grade neurology expertise to your care compassionate, precise, and world-class.
+        </p>
+
+        <!-- Qualification Pills -->
+        <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-10 hero-element">
+            <span class="px-4 py-1.5 bg-gray-100 text-gray-700 border border-gray-200 rounded-full text-sm font-medium">FCPS Neurology</span>
+            <span class="px-4 py-1.5 bg-gray-100 text-gray-700 border border-gray-200 rounded-full text-sm font-medium">FCPS Medicine</span>
+            <span class="px-4 py-1.5 bg-gray-100 text-gray-700 border border-gray-200 rounded-full text-sm font-medium">PEMH Head of Neurology</span>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-element mb-12">
+            <a href="https://wa.me/923480603093?text=Hello%20Doctor,%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg shadow-brand-200 hover:shadow-brand-300 hover:-translate-y-1">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                Book via WhatsApp
+            </a>
+            <a href="tel:+923480603093" class="inline-flex items-center justify-center bg-white text-gray-700 border border-gray-200 hover:border-gray-300 hover:bg-gray-50 px-8 py-4 rounded-full font-medium transition-all">
+                <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                Call Now
+            </a>
+        </div>
+
+        <!-- Key Metrics / Stats Section -->
+        <div class="pt-8 border-t border-gray-100 grid grid-cols-3 gap-4 text-center lg:text-left hero-element">
+            <div>
+                <p class="text-3xl font-bold text-gray-900">30+</p>
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1">Years Experience</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-gray-900">50K+</p>
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1">Patients Treated</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-gray-900">2</p>
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1">FCPS Fellowships</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image & Badge Container -->
+    <div class="lg:col-span-6 relative" id="hero-image-container">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl z-10 aspect-[4/5] max-w-md mx-auto lg:mx-0 lg:ml-auto">
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand-600/20 to-transparent mix-blend-overlay z-10 pointer-events-none"></div>
+            <img src="public/1.jpeg" alt="Dr. Muhammad Tariq" class="w-full h-full object-cover object-center hero-image">
+        </div>
+        <!-- Decorative Elements -->
+        <div class="absolute -top-7 -right-7 w-24 h-24 bg-brand-100 rounded-full z-0 decor-element"></div>
+        <div class="absolute -bottom-2 -left-2 w-32 h-32 bg-gray-100 rounded-full z-0 decor-element"></div>
+        
+        <!-- Floating Badge -->
+        <div class="absolute top-1/4 -left-12 lg:-left-20 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-4 decor-badge">
+            <div class="w-12 h-12 bg-accent-light text-accent-dark rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+                <p class="text-sm font-bold text-gray-900">FCPS</p>
+                <p class="text-xs text-gray-500">Neurology</p>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-2">Our Services</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Comprehensive Neurological Care</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Stroke Management</h4>
+                    <p class="text-gray-600 leading-relaxed">Comprehensive diagnosis, urgent treatment, and long-term care plans for stroke patients.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Headaches & Migraines</h4>
+                    <p class="text-gray-600 leading-relaxed">Advanced diagnostic approaches and personalized therapies for chronic headaches.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Epilepsy & Seizures</h4>
+                    <p class="text-gray-600 leading-relaxed">Expert management of neurological disorders, offering modern therapeutic protocols.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 gap-16 items-center">
+                <div class="mb-12 lg:mb-0 relative" data-aos="fade-right">
+                    <div class="mx-auto w-full max-w-[420px] lg:max-w-[520px] lg:ml-0">
+                        <div class="aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5] lg:aspect-[5/6] rounded-3xl overflow-hidden shadow-soft">
+                            <img src="public/2.jpeg" alt="Dr. Tariq" class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+                    <!-- Experience Card -->
+                    <div class="absolute -bottom-6 -right-6 md:right-8 bg-white p-6 rounded-2xl shadow-xl z-10 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center gap-4">
+                            <h4 class="text-4xl font-extrabold text-brand-600">30+</h4>
+                            <p class="text-sm text-gray-600 leading-snug">Years of <br>Excellence</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-2">About The Doctor</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Professor Brigadier (R) Muhammad Tariq</h3>
+                    
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        A distinguished Neuro-Physician and Military Veteran, honored with the <strong>Sitara-e-Imtiaz (Military)</strong>. Dedicated to providing world-class neurological care based on decades of eminent medical practice.
+                    </p>
+
+                    <div class="space-y-6">
+                        <!-- Qualifications -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Qualifications</h4>
+                                <p class="text-gray-600 mt-1">MBBS (Kayaue), FCPS (Medicine), FCPS (Neurology)</p>
+                            </div>
+                        </div>
+
+                        <!-- Highlights -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Eminent Positions Held</h4>
+                                <p class="text-gray-600 mt-1">Former Head of Neurology Dept, PEMH.<br>Former Advisor in Neurology, Pakistan Army.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-2">Patient Stories</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Trusted by Thousands</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm shadow-gray-200/50" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex text-yellow-400 mb-4 text-lg">★★★★★</div>
+                    <p class="text-gray-600 mb-6 italic leading-relaxed">"The doctor diagnosed my condition when several others couldn't. His extensive experience truly shows in his approach."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500">A</div>
+                        <h4 class="font-bold text-gray-900">Ahmad M.</h4>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm shadow-gray-200/50" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex text-yellow-400 mb-4 text-lg">★★★★★</div>
+                    <p class="text-gray-600 mb-6 italic leading-relaxed">"Very professional clinic environment. The staff is courteous, and the doctor provides immense clarity regarding treatments."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500">S</div>
+                        <h4 class="font-bold text-gray-900">Sara K.</h4>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm shadow-gray-200/50 md:hidden lg:block" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex text-yellow-400 mb-4 text-lg">★★★★★</div>
+                    <p class="text-gray-600 mb-6 italic leading-relaxed">"Highly recommended for anyone needing neurological consulting. The best care I have received."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500">U</div>
+                        <h4 class="font-bold text-gray-900">Usman R.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinic Info & CTA Section -->
+    <section id="location" class="py-24 bg-brand-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 gap-16 items-center">
+                <div class="mb-12 lg:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Book Your Consultation?</h2>
+                    <p class="text-brand-100 text-lg mb-10 max-w-lg leading-relaxed">
+                        Schedule your visit via WhatsApp for a seamless experience. Our team will assist you with available slots and details.
+                    </p>
+                    <a href="https://wa.me/923480603093?text=Hello%20Doctor,%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-accent text-white px-8 py-4 rounded-full font-bold text-lg transition-transform hover:scale-105 shadow-xl shadow-accent/30 group">
+                        <svg class="w-6 h-6 mr-3 group-hover:animate-pulse" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Book Appointment Now
+                    </a>
+                </div>
+
+                <div class="bg-white/10 rounded-3xl p-8 backdrop-blur-sm border border-white/10" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6 border-b border-white/20 pb-4">Clinic Information</h3>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-brand-300 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <div>
+                                <h4 class="font-bold text-white">Neuro Hope Clinic</h4>
+                                <p class="text-brand-100 text-sm mt-1">Dar-ul-Shifa Medical Complex<br>Evolon Plaza, Mall Road, Rawalpindi</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-brand-300 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div>
+                                <h4 class="font-bold text-white">Timings</h4>
+                                <p class="text-brand-100 text-sm mt-1">Mon - Sat: 10:00 AM to 8:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-brand-300 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <div>
+                                <h4 class="font-bold text-white">Contact</h4>
+                                <p class="text-brand-100 text-sm mt-1">Landline: 051-5914999<br>Mobile: 0304-5333820 / 03480603093</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 pt-16 pb-12 border-t border-gray-800/80 relative overflow-hidden">
+    <!-- Subtle Ambient Glow -->
+    <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-brand-600/5 to-transparent pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
+        
+        
+
+        <!-- Divider -->
+        <div class="w-full max-w-sm h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent mb-8"></div>
+
+        <!-- Copyright & Developer Credit -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-xs sm:text-sm text-gray-500">
+            <p>© 2026 All rights reserved.</p>
+            <span class="hidden sm:inline text-gray-700">•</span>
+            <p class="flex items-center gap-1.5">
+                Developed by 
+                <span class="text-gray-300 font-medium hover:text-white transition-colors cursor-default">Zaid Nabi</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923480603093?text=Hello%20Doctor,%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 w-14 h-14 bg-accent hover:bg-accent-dark text-white rounded-full flex items-center justify-center shadow-lg shadow-accent/50 z-50 transition-transform hover:-translate-y-1 hover:scale-105" aria-label="Book on WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+
+    <!-- Scroll to Top Button (Hidden by default) -->
+    <button id="scrollToTopBtn" class="fixed bottom-24 right-6 lg:bottom-28 lg:right-10 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50 focus:outline-none hover:bg-gray-800" aria-label="Scroll to top">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+    </button>
+
+    <!-- GSAP for Hero Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- AOS for Scroll Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
